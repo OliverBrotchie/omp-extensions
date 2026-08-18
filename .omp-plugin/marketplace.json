@@ -1,0 +1,25 @@
+{
+  "name": "omp-extensions",
+  "owner": {
+    "name": "Oliver Brotchie"
+  },
+  "metadata": {
+    "description": "Personal omp extensions: ponytail (lazy senior dev) and caveman (terse prose)"
+  },
+  "plugins": [
+    {
+      "name": "ponytail",
+      "description": "Lazy senior dev mode for AI agents",
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail",
+        "ref": "main"
+      }
+    },
+    {
+      "name": "caveman",
+      "description": "Cuts ~75% of output tokens while keeping technical accuracy",
+      "source": "./plugins/caveman"
+    }
+  ]
+}

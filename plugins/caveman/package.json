@@ -1,0 +1,9 @@
+{
+  "name": "caveman",
+  "version": "1.0.0",
+  "description": "pi-caveman — cuts ~75% of output tokens while keeping full technical accuracy",
+  "license": "MIT",
+  "omp": {
+    "extensions": ["./caveman.ts"]
+  }
+}
