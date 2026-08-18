@@ -20,6 +20,11 @@
       "name": "caveman",
       "description": "Cuts ~75% of output tokens while keeping technical accuracy",
       "source": "./plugins/caveman"
+    },
+    {
+      "name": "guardrails",
+      "description": "Blocks agent edits to AGENTS.md — human-owned file, enforced",
+      "source": "./plugins/guardrails"
     }
   ]
 }

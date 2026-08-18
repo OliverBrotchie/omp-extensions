@@ -1,0 +1,9 @@
+{
+  "name": "guardrails",
+  "version": "1.0.0",
+  "description": "Blocks agent edits to AGENTS.md — human-owned file, enforced",
+  "license": "MIT",
+  "omp": {
+    "extensions": ["./index.ts"]
+  }
+}
