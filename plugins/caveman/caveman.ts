@@ -67,7 +67,7 @@ interface CavemanConfig {
 }
 
 const CONFIG_PATH = join(getConfigDir(), "caveman.json");
-const DEFAULT_CONFIG: CavemanConfig = { defaultLevel: "full", showStatus: true };
+const DEFAULT_CONFIG: CavemanConfig = { defaultLevel: "off", showStatus: true };
 let saveConfigQueue: Promise<void> = Promise.resolve();
 
 async function loadConfig(): Promise<CavemanConfig> {
