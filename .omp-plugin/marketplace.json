@@ -4,7 +4,7 @@
     "name": "Oliver Brotchie"
   },
   "metadata": {
-    "description": "Personal omp extensions: ponytail (lazy senior dev) and caveman (terse prose)"
+    "description": "Personal omp extensions: ponytail (lazy senior dev), combined-review (three-axis review), and caveman (terse prose)"
   },
   "plugins": [
     {
@@ -15,6 +15,11 @@
         "repo": "DietrichGebert/ponytail",
         "ref": "main"
       }
+    },
+    {
+      "name": "combined-review",
+      "description": "One review pass with three parallel subagents: standards, spec, and quality",
+      "source": "./plugins/combined-review"
     },
     {
       "name": "caveman",

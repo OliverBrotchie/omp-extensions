@@ -1,0 +1,7 @@
+name: combined-review
+version: 0.1.0
+description: "One review pass with three parallel subagents: standards, spec, and quality."
+author: Oliver Brotchie
+license: MIT
+provides_skills:
+  - combined-review
