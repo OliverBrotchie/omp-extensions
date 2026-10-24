@@ -30,6 +30,9 @@ Look for the originating spec, in this order:
 3. A spec file under `docs/`, `specs/`, or `.scratch/` matching the branch or feature.
 4. If nothing is found, ask the user where the spec is. If they say there isn't one, the Spec sub-agent reports "no spec available".
 
+Read the pull request body as well. A deliberate deferral belongs there, and the
+Spec agent needs it to tell a deferral from a missing requirement.
+
 ### 3. Identify the standards sources
 
 Search the repo for every file that documents how code should be written. When `CODING_STANDARDS.md` or `CONTRIBUTING.md` exists, it must be on the list. Also read `AGENTS.md`, `CLAUDE.md`, `CONTEXT.md`, `README.md`, `docs/agents/`, and any repo-specific review, contribution, glossary, or domain docs.
@@ -68,13 +71,14 @@ Issue all three calls together, in the foreground, using the harness's review su
 
 - The diff command and commit list.
 - The path or fetched contents of the spec.
-- The brief: "Read the implementation the requirement names, not only the diff. Report: (a) requirements the spec asked for that are missing or partial; (b) behaviour in the diff that wasn't asked for (scope creep); (c) requirements that look implemented but where the implementation looks wrong. Quote the spec line for each finding. Under 400 words."
+- The pull request body and the open tickets the change depends on.
+- The brief: "Read the implementation the requirement names, not only the diff. Report: (a) requirements the spec asked for that are missing or partial; (b) behaviour in the diff that wasn't asked for (scope creep); (c) requirements that look implemented but where the implementation looks wrong. Quote the spec line for each finding. When a missing item is owned by an open ticket, report it as deferred, not missing, unless the deferral is invalid. Under 400 words."
 
 **Quality sub-agent prompt** should include:
 
 - The diff command and commit list, and the fixed point.
 - The entire `Quality review` section below, pasted in full, so the sub-agent has the checklist and output format.
-- The brief: "Read the connected code, not only the diff. Report in the Quality review's output format. Report every finding with a concrete case. Do not change code."
+- The brief: "Read the connected code, not only the diff. You may run the repo's own tests and a minimal throwaway repro; do not edit tracked files. Report in the Quality review's output format. Report every finding with a concrete case. For a crash, data loss, or load claim, reproduce it or say so under `Not checked`."
 
 If the spec is missing, skip the Spec sub-agent and note this in the final report.
 
